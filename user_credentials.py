@@ -8,13 +8,13 @@ class User:
 	
 	user_list = []
 
-	# def __init__(self,fname,lname,password):
-	# 	'''
-	# 	Method for each user method will hold
-	# 	'''
-	# 	self.first_name = first_name
-	# 	self.last_name = last_name
-	# 	self.password = password
+	def __init__(self,fname,lname,password):
+		'''
+		Method for each user method will hold
+		'''
+		self.first_name = first_name
+		self.last_name = last_name
+		self.password = password
 
 	def save_user(self):
 		'''
