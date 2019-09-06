@@ -6,11 +6,11 @@ ability to create a credential and save it. The delete will be done also through
 ## Installation Requirements
 None
 ## BDD
-<!-- Create a username
+Create a username
 Create password
 Create credential
 Save credentials
-Delete credentials -->
+Delete credentials
 ## Input
 1.The user will create a username and password
 2.The user will display created credentials
