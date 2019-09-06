@@ -15,13 +15,13 @@ class TestUser(unittest.TestCase):
 		'''
 		self.new_user = User("Eve","evelyne","pswd100")
 
-	def test__init__(self):
-		'''
-		Test to see if check the creation of user instances is properly done
-		'''
-		self.assertEqual(self.new_user.first_name,"Eve")
-		self.assertEqual(self.new_user.last_name,"evelyne")
-		self.assertEqual(self.new_user.password,"pswd100")
+	# def test__init__(self):
+	# 	'''
+	# 	Test to see if check the creation of user instances is properly done
+	# 	'''
+	# 	self.assertEqual(self.new_user.first_name,"Eve")
+	# 	self.assertEqual(self.new_user.last_name,"evelyne")
+	# 	self.assertEqual(self.new_user.password,"pswd100")
 
 	# def tearDown(self):
 	# 	'''
