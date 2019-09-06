@@ -56,16 +56,16 @@ def copy_credential(site_name):
 	'''
 	return Credential.copy_credential(site_name)
 
-def main():
-	print(' ')
-	print('Hello! Welcome to Password Locker.')
-	while True:
-		print(' ')
-		print("-"*60)
-		print('Use these codes to navigate: \n ca-Create an Account \n li-Log In \n ex-Exit')
-		short_code = input('Enter a choice: ').lower().strip()
-		if short_code == 'ex':
-			break
+# def main():
+# 	print(' ')
+# 	print('Hello! Welcome to Password Locker.')
+# 	while True:
+# 		print(' ')
+# 		print("-"*60)
+# 		print('Use these codes to navigate: \n ca-Create an Account \n li-Log In \n ex-Exit')
+# 		short_code = input('Enter a choice: ').lower().strip()
+# 		if short_code == 'ex':
+# 			break
 
 		elif short_code == 'ca':
 			print("-"*60)
