@@ -1,13 +1,13 @@
-
-#! /usr/bin/env python3.6
+#!/usr/bin/env python3
 import pyperclip
-from user_credentials import User, Credential
+from user_credentials import User
+from user_credentials import Credential
 
 def create_user(fname,lname,password):
 	'''
 	Function to create a new user account
 	'''
-	new_user = User(first_name,last_name,password)
+	new_user = User(fname,lname,password)
 	return new_user
 
 def save_user(user):
@@ -17,11 +17,11 @@ def save_user(user):
 	User.save_user(user)
 
 
-def verify_user(first_name,password):
+def verify_user(first_name,last_name,password):
 	'''
 	Function that verifies the existance of the user before creating credentials
 	'''
-	checking_user = Credential.check_user(first_name,password)
+	checking_user = Credential.check_user(first_name,last_name,password)
 	return checking_user
 
 def generate_password():
@@ -58,7 +58,7 @@ def copy_credential(site_name):
 
 def main():
 	print(' ')
-	print('Hello! Welcome to Password Locker.')
+	print('Welcome to Password Locker.')
 	while True:
 		print(' ')
 		print("-"*60)
@@ -71,9 +71,9 @@ def main():
 			print("-"*60)
 			print(' ')
 			print('To create a new account:')
-			first_name = input('Enter your first name - ').strip()
-			last_name = input('Enter your last name - ').strip()
-			password = input('Enter your password - ').strip()
+			first_name = input('Enter your first name : ').strip()
+			last_name = input('Enter your last name : ').strip()
+			password = input('Enter your password : ').strip()
 			save_user(create_user(first_name,last_name,password))
 			print(" ")
 			print(f'New Account Created for: {first_name} {last_name} using password: {password}')
@@ -81,8 +81,8 @@ def main():
 			print("-"*60)
 			print(' ')
 			print('To login, enter your account details:')
-			user_name = input('Enter your first name - ').strip()
-			password = str(input('Enter your password - '))
+			user_name = input('Enter your first name : ').strip()
+			password = str(input('Enter your password : '))
 			user_exists = verify_user(user_name,password)
 			if user_exists == user_name:
 				print(" ")
@@ -133,7 +133,7 @@ def main():
 							print(' ')	
 						else:
 							print(' ')
-							print("You don't seem to have any credentials saved yet")
+							print("No credentials yet!")
 							print(' ')
 					elif short_code == 'copy':
 						print(' ')
@@ -145,7 +145,7 @@ def main():
 
 			else: 
 				print(' ')
-				print('Oops! Wrong details entered. Try again or Create an Account.')		
+				print('Oops! Wrong details entered. Try again or Create a new  Account.')		
 		
 		else:
 			print("-"*60)
@@ -153,10 +153,6 @@ def main():
 			print('Oops! Wrong option entered. Try again.')
 				
 
-
-
-
-
-
 if __name__ == '__main__':
+	
 	main()

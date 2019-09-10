@@ -1,5 +1,5 @@
-import pyperclip
 import string
+import pyperclip
 import random
 class User:
 	'''
@@ -8,12 +8,12 @@ class User:
 	
 	user_list = []
 
-	def __init__(self,fname,lname,password):
+	def __init__(self,f_name,l_name,password):
 		'''
 		Method for each user method will hold
 		'''
-		self.first_name = first_name
-		self.last_name = last_name
+		self.first_name = f_name
+		self.last_name = l_name
 		self.password = password
 
 	def save_user(self):
@@ -26,7 +26,7 @@ class Credential:
 	'''
 	Class to create  account credentials, generate passwords and save their information
 	'''
-	# Class Variables
+	
 	credentials_list =[]
 	user_credentials_list = []
 
@@ -35,7 +35,6 @@ class Credential:
 		Method to define the properties for each user object will hold.
 		'''
 
-		# instance variables
 		self.user_name = user_name
 		self.site_name = site_name
 		self.account_name = account_name
@@ -44,7 +43,7 @@ class Credential:
 	@classmethod
 	def check_user(cls,first_name,password):
 		'''
-		Method that checks if the name and password entered match entries in the users_list
+		Method that checks if the name and password entered match those in the users_list
 		'''
 		current_user = ''
 		for user in User.user_list:
@@ -57,7 +56,6 @@ class Credential:
 		Method to define the properties for each user object will hold.
 		'''
 
-		# instance variables
 		self.user_name = user_name
 		self.site_name = site_name
 		self.account_name = account_name
@@ -67,15 +65,15 @@ class Credential:
 		'''
 		Function to save a newly created user instance
 		'''
-		# global users_list
+
 		Credential.credentials_list.append(self)
-	
-	def generate_password(size=8, char=string.ascii_uppercase+string.ascii_lowercase+string.digits):
-		'''
-		Function to generate an 8 character password for a credential
-		'''
-		gen_pass=''.join(random.choice(char) for _ in range(size))
-		return gen_pass
+
+		def generate_password(size=8, char=string.ascii_uppercase+string.ascii_lowercase+string.digits):
+			'''
+			Function to generate an 8 character password for a credential
+			'''
+			gen_pass=''.join(random.choice(char) for _ in range(size))
+			return gen_pass		
 
 	@classmethod
 	def display_credentials(cls,user_name):
